@@ -82,6 +82,7 @@ def about(request, id):
     '''
     album = AlbumInfo.objects.filter(user_id=id)  # 数据表中的外键关联user_id
     tag = ArticleTag.objects.filter(user_id=id)
+    # .first() 把QuerySet对象转化为字典对象，方便取属性值
     user = MyUser.objects.filter(id=id).first()  # 直接就是用户的id
     return render(request, 'about.html', locals())
 

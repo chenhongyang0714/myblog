@@ -46,8 +46,6 @@
     {% if pageInfo.has_next %}
         <a href="{% url 'album' id pageInfo.next_page_number %}">下一页</a>
     {% endif %}
-
-
 </div>
 </article>
 {% endblock %}
@@ -55,10 +53,10 @@
 {#模板重写#}
 {% block script %}
     <script>
-	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
-		(function(){
-			window.scrollReveal = new scrollReveal({reset: true});
-		})();
-	};
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            (function(){
+                window.scrollReveal = new scrollReveal({reset: true});
+            })();
+        };
     </script>
 {% endblock %}
