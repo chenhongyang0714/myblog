@@ -17,8 +17,8 @@ def register(request):
     pageTitle = '用户注册'
     confirmPassword = True
     button = '注册'
-    urlText = '用户注册'
-    urlName = 'register'
+    urlText = '用户登录'
+    urlName = 'userLogin'
     if request.method == 'POST':
         u = request.POST.get('username', '')
         p = request.POST.get('password', '')
@@ -49,8 +49,8 @@ def userLogin(request):
     title = '登录博客'
     pageTitle = '用户登录'
     button = '登录'
-    urlText = '用户登录'
-    urlName = 'userLogin'
+    urlText = '用户注册'
+    urlName = 'register'
     if request.method == 'POST':
         u = request.POST.get('username', '')
         p = request.POST.get('password', '')
