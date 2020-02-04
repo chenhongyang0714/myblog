@@ -2,11 +2,15 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
+from django.shortcuts import render
+
+from album.models import AlbumInfo
+from article.models import ArticleTag
 
 
 class MyUser(AbstractUser):
     '''
-    用户信息
+    用户(博主)信息
     '''
     name = models.CharField('姓名', max_length=50, default='匿名用户')
     introduce = models.TextField('简介', default='暂无介绍')
@@ -21,6 +25,12 @@ class MyUser(AbstractUser):
 
     def __str__(self):
         return self.name
+
+
+
+
+
+
 
 
 

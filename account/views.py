@@ -1,10 +1,10 @@
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from django.urls import reverse
 
 from account.models import MyUser
+from album.models import AlbumInfo
+from article.models import ArticleTag
 
 
 def register(request):
@@ -73,6 +73,17 @@ def userLogin(request):
     return render(request, 'user.html', locals())
 
 
+def about(request, id):
+    '''
+    博主资料
+    :param request:
+    :param id: 某一位博主的博客账号
+    :return:
+    '''
+    album = AlbumInfo.objects.filter(user_id=id)  # 数据表中的外键关联user_id
+    tag = ArticleTag.objects.filter(user_id=id)
+    user = MyUser.objects.filter(id=id).first()  # 直接就是用户的id
+    return render(request, 'about.html', locals())
 
 
 
