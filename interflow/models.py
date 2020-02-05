@@ -12,7 +12,7 @@ class Board(models.Model):
     email = models.CharField('邮箱地址', max_length=50)
     content = models.CharField('留言内容', max_length=500)
     created = models.DateTimeField('创建时间', default=timezone.now)
-    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)  # user_id
 
     def __str__(self):
         return self.email

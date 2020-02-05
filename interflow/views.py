@@ -23,6 +23,7 @@ def board(request, id, page):
     if not user:
         return redirect(reverse('register'))
     if request.method == 'GET':
+        # 最新日期数据优先显示
         boardList = Board.objects.filter(user_id=id).order_by('-created')  # user_id为Board的外键
         paginator = Paginator(boardList, 10)  # 分页对象
         try:
