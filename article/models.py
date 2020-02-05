@@ -24,6 +24,7 @@ class ArticleInfo(models.Model):
     '''
     正文内容 管理
     '''
+    # author_id
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name='用户')
     title = models.CharField('标题', max_length=200)
     content = RichTextUploadingField(verbose_name='内容')
