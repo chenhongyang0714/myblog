@@ -5,7 +5,7 @@ from account.models import MyUser
 
 class Board(models.Model):
     '''
-    存储留言板信息
+    留言板信息
     '''
     id = models.AutoField(primary_key=True)
     name = models.CharField('留言用户', max_length=50)

@@ -22,7 +22,7 @@ class ArticleTag(models.Model):
 
 class ArticleInfo(models.Model):
     '''
-    正文内容 管理
+    每篇文章正文内容
     '''
     # author_id
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name='用户')
@@ -45,7 +45,7 @@ class ArticleInfo(models.Model):
 
 class Comment(models.Model):
     '''
-    评论信息
+    每篇文章评论信息
     '''
     # article_id 为 ArticleInfo的主键id
     article = models.ForeignKey(ArticleInfo, on_delete=models.CASCADE, verbose_name='所属文章')
