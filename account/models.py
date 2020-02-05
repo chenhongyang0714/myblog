@@ -1,9 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-# Create your models here.
 from django.shortcuts import render
-
 from album.models import AlbumInfo
 from article.models import ArticleTag
 
@@ -23,6 +20,7 @@ class MyUser(AbstractUser):
     wb = models.CharField('微博', max_length=100, default='暂无信息')
     photo = models.ImageField('头像', blank=True, upload_to='images/user/')  # 字符类型，存储图片路径的字符串
 
+    # 设置返回值
     def __str__(self):
         return self.name
 

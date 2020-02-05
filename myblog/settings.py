@@ -25,7 +25,7 @@ SECRET_KEY = '2y&a7a@@fk=ta+c%x@i8pv1lx+$21n2_qzc40)ux*vy3jb9a%j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -132,6 +132,7 @@ AUTH_USER_MODEL = 'account.MyUser'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'publicStatic')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 设置媒体资源的保存路径
 MEDIA_URL = '/media/'
