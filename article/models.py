@@ -47,6 +47,7 @@ class Comment(models.Model):
     '''
     评论信息
     '''
+    # article_id 为 ArticleInfo的主键id
     article = models.ForeignKey(ArticleInfo, on_delete=models.CASCADE, verbose_name='所属文章')
     commentator = models.CharField('评论用户', max_length=90)
     content = models.TextField('评论内容')

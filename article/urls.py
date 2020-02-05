@@ -9,5 +9,5 @@ urlpatterns = [
     # 文章列表
     path('<int:id>/<int:page>.html', article, name='article'),
     # 文章正文内容
-    # path(),
+    path('detail/<int:id>/<int:aId>.html', detail, name='detail'),
 ]
