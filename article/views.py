@@ -48,7 +48,7 @@ def detail(request, id, aId):
     user = MyUser.objects.filter(id=id).first()
     if request.method == 'GET':
         ats = ArticleInfo.objects.filter(id=aId).first()
-        # 每篇文章的所有分类标签
+        # 每篇文章的所有分类标签，atags为可迭代对象
         atags = ArticleInfo.objects.get(id=aId).article_tag.all()
         # 每篇文章的所有评论信息
         cms = Comment.objects.filter(article_id=aId).order_by('-created')
