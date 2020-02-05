@@ -6,6 +6,7 @@
 {#模板重写#}
 {% block body %}
 <article>
+    {#图片展示#}
     <div class="picbox">
         {% for list in pageInfo.object_list %}
             <div class="picvalue" data-scroll-reveal="enter bottom over 1s" >
@@ -28,7 +29,7 @@
         {% endfor %}
     </div>
 
-{#分页功能#}
+{#底部分页功能#}
 <div class="pagelist">
     {#上一页的路由地址#}
     {% if pageInfo.has_previous %}

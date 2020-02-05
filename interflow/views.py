@@ -35,7 +35,7 @@ def board(request, id, page):
             # 若用户访问的页数大于实际页数，则返回最后一页的数据
             pageInfo = paginator.page(paginator.num_pages)
         return render(request, 'board.html', locals())
-    # 提交留言
+    # 提交留言 POST
     else:
         name = request.POST.get('name')
         email = request.POST.get('email')
